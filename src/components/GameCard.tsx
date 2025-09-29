@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Trophy, Coins, Leaf } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface GameCardProps {
   title: string;
@@ -88,8 +89,10 @@ export function GameCard({ title, description, image, reward, difficulty, player
             )}
           </div>
 
-          <Button size="sm" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
-            Play Now
+          <Button asChild size="sm" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
+            <Link to={category === "Quiz" ? "/quiz" : "/games"}>
+              Play Now
+            </Link>
           </Button>
         </div>
       </div>

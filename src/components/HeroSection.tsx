@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Gamepad2, Trophy, Leaf } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-bg.jpg";
 
 export function HeroSection() {
@@ -54,12 +55,14 @@ export function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-          <Button size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-6">
-            <Play className="w-5 h-5 mr-2" />
-            Start Gaming
+          <Button asChild size="lg" className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8 py-6">
+            <Link to="/games">
+              <Play className="w-5 h-5 mr-2" />
+              Start Gaming
+            </Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-primary/30 hover:border-primary hover:bg-primary/10 text-lg px-8 py-6">
-            View Leaderboard
+          <Button asChild size="lg" variant="outline" className="border-primary/30 hover:border-primary hover:bg-primary/10 text-lg px-8 py-6">
+            <Link to="/leaderboard">View Leaderboard</Link>
           </Button>
         </div>
 
